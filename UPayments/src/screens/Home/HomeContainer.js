@@ -48,7 +48,7 @@ const HomeContainer = memo(props => {
   }, []);
 
   React.useLayoutEffect(() => {
-    navigation.titleString = 'Home';
+    navigation.titleString = 'Upayments store';
     Navigation.setNavigation3(navigation);
     navigation.goBackPress = () => {
       navigation.goBack();

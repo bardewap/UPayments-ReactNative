@@ -5,7 +5,8 @@ import {
   Text,
   TextInput,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
+  SafeAreaView
 } from 'react-native';
 import styles from './styles';
 import Loader from '../../components/Loader';
@@ -86,11 +87,14 @@ const CreateProductComponent = memo(props => {
 
         </View>
 
-        <TouchableOpacity onPress={() => props.addButtonPress()} style={styles.buttonBackStyle1}>
-          <Text style={styles.buttonTextStyle1}>Add Product</Text>
-        </TouchableOpacity>
 
       </ScrollView>
+
+      <TouchableOpacity onPress={() => props.addButtonPress()} style={styles.NextButton}>
+        <Text style={styles.buttonTextStyle1}>Add Product</Text>
+      </TouchableOpacity>
+      <SafeAreaView />
+
     </View>
 
   );

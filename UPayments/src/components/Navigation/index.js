@@ -26,9 +26,7 @@ const setNavigation3 = navigation => {
     headerTitle: props => <LogoTitle1 {...navigation} />,
     headerLeft: () => (
       <View style={NavgationStyles.leftView}>
-        <TouchableWithoutFeedback onPress={() => navigation.menuButtonPress()}>
-          <Image source={Images.menu} style={NavgationStyles.menuButton} />
-        </TouchableWithoutFeedback>
+        
       </View>
     ),
     headerStyle: {

@@ -73,7 +73,7 @@ const CreateProductContainer = memo(props => {
   }, []);
 
   React.useLayoutEffect(() => {
-    navigation.titleString = 'Create';
+    navigation.titleString = 'Add Product';
     Navigation.setNavigation5(navigation);
     navigation.goBackPress = () => {
       navigation.goBack();

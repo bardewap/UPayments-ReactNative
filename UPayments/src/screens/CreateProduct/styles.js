@@ -141,4 +141,15 @@ export default StyleSheet.create({
     borderColor: colors.gray,
     marginTop:10,
   },
+  NextButton: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: sizes.regularLarge,
+    height: 60,
+    width: '100%',
+    marginTop: 0,
+    alignSelf: 'center',
+    backgroundColor: colors.main_color,
+  },
 });
