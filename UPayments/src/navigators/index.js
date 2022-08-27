@@ -7,17 +7,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import CustomSidebarMenu from '../components/CustomSidebarMenu/CustomSidebarMenu';
 import SplashContainer from '../screens/Splash/SplashContainer';
-import LoginContainer from '../screens/Login/LoginContainer';
-import RegisterContainer from '../screens/Register/RegisterContainer';
 import HomeContainer from '../screens/Home/HomeContainer';
-import IntroductionContainer from '../screens/Introduction/IntroductionContainer';
-import NewComplaintContainer from '../screens/NewComplaint/NewComplaintContainer';
-import ComplaintSuccessContainer from '../screens/ComplaintSuccess/ComplaintSuccessContainer';
-import ComplaintStatusContainer from '../screens/ComplaintStatus/ComplaintStatusContainer';
-import FeedbackStatusContainer from '../screens/FeedbackStatus/FeedbackStatusContainer';
-import FeedbackContainer from '../screens/Feedback/FeedbackContainer';
-import NewComplaintTwoContainer from '../screens/NewComplaintTwo/NewComplaintTwoContainer';
-import NewComplaintThreeContainer from '../screens/NewComplaintThree/NewComplaintThreeContainer';
 import ProductDetailsContainer from '../screens/ProductDetails/ProductDetailsContainer';
 
 const SplashStack = createStackNavigator();
@@ -37,35 +27,6 @@ const DemoScreen = () => (
     initialRouteName="HomeContainer">
     <DemoStack.Screen name="HomeContainer" component={HomeContainer} />
     <DemoStack.Screen name="ProductDetailsContainer" component={ProductDetailsContainer} />
-    <DemoStack.Screen
-      name="IntroductionContainer"
-      component={IntroductionContainer}
-    />
-    <DemoStack.Screen
-      name="NewComplaintContainer"
-      component={NewComplaintContainer}
-    />
-    <DemoStack.Screen
-      name="ComplaintSuccessContainer"
-      component={ComplaintSuccessContainer}
-    />
-    <DemoStack.Screen
-      name="ComplaintStatusContainer"
-      component={ComplaintStatusContainer}
-    />
-    <DemoStack.Screen
-      name="FeedbackStatusContainer"
-      component={FeedbackStatusContainer}
-    />
-    <DemoStack.Screen name="FeedbackContainer" component={FeedbackContainer} />
-    <DemoStack.Screen
-      name="NewComplaintTwoContainer"
-      component={NewComplaintTwoContainer}
-    />
-    <DemoStack.Screen
-      name="NewComplaintThreeContainer"
-      component={NewComplaintThreeContainer}
-    />
   </DemoStack.Navigator>
 );
 

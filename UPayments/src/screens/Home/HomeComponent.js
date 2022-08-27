@@ -36,18 +36,25 @@ const HomeComponent = memo(props => {
     </View>
   );
 
+
+  const renderItem1 = ({ item }) => (
+    <TouchableOpacity style={styles.item1} onPress={() => props.getSortResult(item)} >
+      <Text style={styles.categoryName}>{item.name}</Text>
+    </TouchableOpacity>
+  );
+
   const renderItem = ({ item }) => (
     <TouchableOpacity style={styles.item} onPress={() => props.itemDetailsButtonPress(item)}>
       <View>
         <View style={styles.imageBg}>
-        <Image
-          style={styles.imageThumbnail}
-          source={{ uri: item.avatar }}
-        />
+          <Image
+            style={styles.imageThumbnail}
+            source={{ uri: item.avatar }}
+          />
         </View>
-        <View  style ={styles.textBack}>
-        <Text style={styles.textName}>{item.name}</Text>
-        <Text style={styles.textPrice}>{"$ "+item.price}</Text>
+        <View style={styles.textBack}>
+          <Text style={styles.textName}>{item.name}</Text>
+          <Text style={styles.textPrice}>{"$ " + item.price}</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -56,6 +63,16 @@ const HomeComponent = memo(props => {
   return (
     <View style={styles.container}>
       <Loader loading={props.isLoading} />
+      <FlatList
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        horizontal={true}
+        contentContainerStyle={{ alignContent: 'center', alignItems: 'center' }}
+        data={props.sort}
+        renderItem={renderItem1}
+        keyExtractor={(item, index) => index}
+      />
+
       <FlatList
         style={styles.flatList}
         data={props.productList}

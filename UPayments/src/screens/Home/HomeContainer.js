@@ -5,10 +5,13 @@ import { ShowAlert } from '../../utils/theme';
 import { Navigation } from '../../utils/theme';
 import * as userActions from '../../redux/actions/userActions';
 const HomeContainer = memo(props => {
-  const { navigation, apiProductList } = props;
+  const { navigation, apiProductList,apigetCategoryList } = props;
   const [isLoading, setLoading] = React.useState(false);
   const [search, setSearch] = useState('');
   const [productList, setProductList] = useState([]);
+  const [sort, setSort] = useState([
+   
+  ])
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => { });
@@ -17,6 +20,8 @@ const HomeContainer = memo(props => {
 
   useEffect(() => {
     apiProductListCall()
+    callCategoryListAPI()
+
   }, []);
 
   React.useLayoutEffect(() => {
@@ -31,7 +36,39 @@ const HomeContainer = memo(props => {
     navigation.navigate('ProductDetailsContainer',{data:{item:item}});
   };
 
- 
+  const getSortResult = (value) => {
+   console.log(value)
+   
+  };
+
+
+  const clearSorting = () => {
+    setCategoryId("")
+    callGetAllVendorsAPI(1, "", categoryId, position.latitude, position.longitude)
+
+  };
+
+
+  const callCategoryListAPI = async () => {
+    setLoading(true)
+    await apigetCategoryList()
+      .then(response => {
+        var data_response = response.payload.data;
+        console.log("apigetCategoryList Response " + JSON.stringify(data_response));
+        if (data_response?.message) {
+          ShowAlert(data_response?.message)
+          setSort(data_response?.categories)
+          setLoading(false);
+        } else {
+          setLoading(false);
+          ShowAlert(data_response.message)
+        }
+      }).catch(error => {
+        console.log(error);
+        ShowAlert(String(error.error))
+        setLoading(false);
+      });
+  }
   const apiProductListCall = async () => {
     setLoading(true);
     await apiProductList()
@@ -52,10 +89,10 @@ const HomeContainer = memo(props => {
         setLoading(false);
       });
   };
+  
 
   const pullToRefresh = () => {
     apiProductListCall()
-
   }
 
   return (
@@ -65,6 +102,8 @@ const HomeContainer = memo(props => {
       productList={productList}
       pullToRefresh={pullToRefresh}
       itemDetailsButtonPress={itemDetailsButtonPress}
+      sort={sort}
+      getSortResult={getSortResult}
 
     />
   );
@@ -77,5 +116,9 @@ HomeContainer.navigationOptions = {
 const mapStateToProps = ({ }) => ({});
 const mapDispatchToProps = dispatch => ({
   apiProductList: () => dispatch(userActions.apiProductList()),
+  apigetCategoryList: () => dispatch(userActions.apigetCategoryList()),
+  apiProductPost: () => dispatch(userActions.apiProductList()),
+
+
 });
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

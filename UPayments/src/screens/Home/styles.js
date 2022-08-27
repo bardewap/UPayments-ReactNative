@@ -40,28 +40,45 @@ export default StyleSheet.create({
     shadowRadius: 4,
     elevation: 2,
   },
+  item1: {
+    // flex: 1,
+    width: 150,
+    height: 50,
+    margin:10,
+    borderWidth:1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:colors.gray,
+    borderRadius:20
+
+  },
   imageThumbnail: {
     justifyContent: 'center',
     alignItems: 'center',
     height: 150,
-    width:150,
+    width: 150,
   },
   textBack: {
     backgroundColor: colors.black,
-    flex:1,
-    borderRadius:8,
+    flex: 1,
+    borderRadius: 8,
   },
-  textName:{
+  textName: {
     color: colors.white,
     fontSize: sizes.smalls,
-    padding:5
+    padding: 5
   },
-  textPrice:{
+  textPrice: {
     color: colors.white,
     fontSize: sizes.smalls,
-    padding:5
+    padding: 5
   },
-  imageBg:{
-  padding:15
-  }
+  imageBg: {
+    padding: 15
+  },
+  categoryName: {
+    color: colors.black,
+    fontSize: sizes.regularLarge,
+    // flex:1
+  },
 });
