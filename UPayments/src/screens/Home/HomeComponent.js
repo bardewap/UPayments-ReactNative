@@ -13,8 +13,19 @@ import styles from './styles';
 import Loader from '../../components/Loader';
 import { Images, colors } from '../../utils/theme';
 import { ScrollView } from 'react-native-gesture-handler';
-const HomeComponent = memo(props => {
 
+const HomeComponent = memo(props => {
+  const actionsPolls = [
+
+    {
+      text: "Create",
+      icon: Images.delete,
+      name: "bt_create",
+      distanceToEdge: 10,
+      buttonSize: 40,
+      margin: 10,
+    }
+  ];
   const [refreshing, setRefreshing] = React.useState(false);
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
@@ -89,6 +100,26 @@ const HomeComponent = memo(props => {
         }
         ListEmptyComponent={props.isLoading ? renderLoader() : renderEmptyView}
       />
+
+      <TouchableOpacity onPress={() => props.createButtonPress()} style={{
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+        backgroundColor: colors.white,
+        position: 'absolute',
+        bottom: 10,
+        right: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+
+        <View >
+          <Image
+            style={styles.icon}
+            source={Images.add}
+          />
+        </View>
+      </TouchableOpacity>
     </View>
 
   );

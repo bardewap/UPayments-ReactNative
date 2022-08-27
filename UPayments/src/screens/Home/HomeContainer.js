@@ -13,6 +13,29 @@ const HomeContainer = memo(props => {
    
   ])
 
+  const [screenData, setScreenData] = useState({
+    eventTime: '',
+    eventName: '',
+    userVoted:false,
+    eventDesc: '',
+    commentCount: 0,
+    attendessCount: 3,
+    message: "Vote for your favorite place",
+    summaryLocation: [],
+    summarylocationArrayRefresh: true,
+    selectedIndex: -1,
+    isOwner: false,
+    commentList: [],
+    commentListRefresh: true,
+    seletedUserName: "",
+    seletedUserHasVoted: false,
+    seletedUserCommentText: "",
+    seletedAttendeesLocations: [],
+    seletedAttendeesLocationsArrayRefresh: true,
+    attendessUserList: [],
+    attendessUserIndex: 0,
+  });
+
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => { });
     return unsubscribe;
@@ -56,7 +79,7 @@ const HomeContainer = memo(props => {
         var data_response = response.payload.data;
         console.log("apigetCategoryList Response " + JSON.stringify(data_response));
         if (data_response?.message) {
-          ShowAlert(data_response?.message)
+          // ShowAlert(data_response?.message)
           setSort(data_response?.categories)
           setLoading(false);
         } else {
@@ -76,7 +99,6 @@ const HomeContainer = memo(props => {
         var data_response = response.payload.data;
         console.log("apiProductList Response " + JSON.stringify(data_response));
         if (data_response?.message) {
-          
           setLoading(false);
           setProductList(data_response?.products)
         } else {
@@ -95,6 +117,11 @@ const HomeContainer = memo(props => {
     apiProductListCall()
   }
 
+  const createButtonPress = () => {
+    navigation.navigate('CreateProductContainer');
+
+  }
+
   return (
     <HomeComponent
       props={props}
@@ -104,6 +131,8 @@ const HomeContainer = memo(props => {
       itemDetailsButtonPress={itemDetailsButtonPress}
       sort={sort}
       getSortResult={getSortResult}
+      createButtonPress={createButtonPress}
+      screenData={screenData}
 
     />
   );

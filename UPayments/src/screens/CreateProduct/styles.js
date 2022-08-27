@@ -40,6 +40,67 @@ export default StyleSheet.create({
     shadowRadius: 4,
     elevation: 2,
   },
+  imageThumbnail: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    // height: 200,
+    width:'100%',
+    flex:1
+  },
+  textBack: {
+    backgroundColor: colors.black,
+    flex:1,
+    borderRadius:15,
+    marginTop:50,
+
+  },
+  textName:{
+    color: colors.white,
+    fontSize: sizes.regularLarge,
+    padding:5,
+    fontWeight:'500',
+    marginLeft:5,
+    marginRight:5,
+    marginTop:10,
+    marginBottom:20,
+  },
+  textPrice:{
+    color: colors.white,
+    fontSize: sizes.smalls,
+    padding:5,
+    position: 'absolute',
+    right: 15,
+    marginRight:5,
+    marginTop:10,
+    marginBottom:20,
+    fontWeight:'500',
+  },
+  textdescription:{
+    color: colors.white,
+    fontSize: sizes.smalls,
+    padding:5,
+    position: 'absolute',
+    marginRight:5,
+    marginLeft:5,
+    marginTop:40,
+
+  },
+  imageBg:{
+    flex:1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:colors.gray,
+  },
+  header:{
+    color: colors.black,
+    fontSize: sizes.regularLarge,
+    padding:5,
+    fontWeight:'500',
+    marginLeft:5,
+    marginRight:5,
+    marginTop:10,
+    marginBottom:20,
+  },
   item1: {
     // flex: 1,
     width: 150,
@@ -51,39 +112,5 @@ export default StyleSheet.create({
     backgroundColor:colors.gray,
     borderRadius:20
 
-  },
-  imageThumbnail: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 150,
-    width: 150,
-  },
-  textBack: {
-    backgroundColor: colors.black,
-    flex: 1,
-    borderRadius: 8,
-  },
-  textName: {
-    color: colors.white,
-    fontSize: sizes.smalls,
-    padding: 5
-  },
-  textPrice: {
-    color: colors.white,
-    fontSize: sizes.smalls,
-    padding: 5
-  },
-  imageBg: {
-    padding: 15
-  },
-  categoryName: {
-    color: colors.black,
-    fontSize: sizes.regularLarge,
-    // flex:1
-  },
-  icon: {
-   
-    height: 20,
-    width: 20,
   },
 });

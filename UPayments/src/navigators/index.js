@@ -9,6 +9,7 @@ import CustomSidebarMenu from '../components/CustomSidebarMenu/CustomSidebarMenu
 import SplashContainer from '../screens/Splash/SplashContainer';
 import HomeContainer from '../screens/Home/HomeContainer';
 import ProductDetailsContainer from '../screens/ProductDetails/ProductDetailsContainer';
+import CreateProductContainer from '../screens/CreateProduct/CreateProductContainer';
 
 const SplashStack = createStackNavigator();
 const SplashScreen = () => (
@@ -27,6 +28,8 @@ const DemoScreen = () => (
     initialRouteName="HomeContainer">
     <DemoStack.Screen name="HomeContainer" component={HomeContainer} />
     <DemoStack.Screen name="ProductDetailsContainer" component={ProductDetailsContainer} />
+    <DemoStack.Screen name="CreateProductContainer" component={CreateProductContainer} />
+
   </DemoStack.Navigator>
 );
 

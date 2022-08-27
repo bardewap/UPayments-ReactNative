@@ -184,4 +184,14 @@ export default StyleSheet.create({
     color: colors.white,
     fontSize: 15,
   },
+  inputStylesText11: {
+    marginLeft: 16,
+    marginRight: 16,
+    height: 45, borderColor: colors.placeholder,
+    borderWidth: 1,
+    borderRadius: 8,
+    color: colors.black,
+    paddingHorizontal: 15,
+    fontSize:sizes.Medium,
+  },
 });
