@@ -43,13 +43,16 @@ export default StyleSheet.create({
   imageThumbnail: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: 150,
-    width:150,
+    // height: 200,
+    width:'100%',
+    flex:1
   },
   textBack: {
     backgroundColor: colors.black,
     flex:1,
-    borderRadius:8,
+    borderRadius:15,
+    marginTop:50,
+
   },
   textName:{
     color: colors.white,
@@ -59,19 +62,33 @@ export default StyleSheet.create({
     marginLeft:5,
     marginRight:5,
     marginTop:10,
-    marginBottom:10,
+    marginBottom:20,
   },
   textPrice:{
     color: colors.white,
     fontSize: sizes.smalls,
     padding:5,
+    position: 'absolute',
+    right: 15,
+    marginRight:5,
+    marginTop:10,
+    marginBottom:20,
+    fontWeight:'500',
+  },
+  textdescription:{
+    color: colors.white,
+    fontSize: sizes.smalls,
+    padding:5,
+    position: 'absolute',
+    marginRight:5,
     marginLeft:5,
-    marginRight:5
+    marginTop:40,
+
   },
   imageBg:{
     flex:1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:colors.gray
+    backgroundColor:colors.gray,
   }
 });

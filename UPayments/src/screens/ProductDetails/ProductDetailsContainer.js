@@ -7,12 +7,9 @@ import * as userActions from '../../redux/actions/userActions';
 const ProductDetailsContainer = memo(props => {
   const { navigation, apiProductDetail } = props;
   const [isLoading, setLoading] = React.useState(false);
-  const [productList, setProductList] = useState([]);
   const { data } = props.route.params;
   const [screenData, setScreenData] = useState({
     productDetail: {},
-    
-
     
   });
 
@@ -26,27 +23,13 @@ const ProductDetailsContainer = memo(props => {
   }, []);
 
   React.useLayoutEffect(() => {
-    navigation.titleString = 'Home';
+    navigation.titleString = 'Detail';
     Navigation.setNavigation5(navigation);
     navigation.goBackPress = () => {
       navigation.goBack();
     };
   });
-
-  const introductionPress = () => {
-    navigation.navigate('IntroductionContainer');
-  };
-
-  const searchPress = () => {
-    callComplaintSearchAPI(search)
-  };
-
-  const complaintPress = () => {
-    navigation.navigate('NewComplaintContainer');
-  };
-
   const apiProductDetailCall = async () => {
-
     var productId =data.item._id
     setLoading(true);
     await apiProductDetail(productId)
@@ -56,8 +39,6 @@ const ProductDetailsContainer = memo(props => {
         if (data_response?.message) {
           setLoading(false);
           setScreenData({ ...screenData, productDetail: data_response?.product });
-
-          
         } else {
           setLoading(false);
           ShowAlert(data_response.message)
@@ -69,15 +50,10 @@ const ProductDetailsContainer = memo(props => {
       });
   };
 
-
-
   return (
     <ProductDetailsComponent
       props={props}
       isLoading={isLoading}
-      introductionPress={introductionPress}
-      complaintPress={complaintPress}
-      searchPress={searchPress}
       screenData={screenData}
 
     />
