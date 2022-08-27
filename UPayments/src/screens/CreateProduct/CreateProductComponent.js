@@ -14,10 +14,11 @@ import { sizes } from '../../utils/sizes';
 import { Images, colors } from '../../utils/theme';
 import { globalStyles } from '../../utils/theme';
 
+
 const CreateProductComponent = memo(props => {
 
   const renderItem1 = ({ item }) => (
-    <TouchableOpacity style={styles.item1} onPress={() => props.getSortResult(item)} >
+    <TouchableOpacity style={styles.item1} onPress={() => props.categoryPress(item)} >
       <Text style={styles.categoryName}>{item.name}</Text>
     </TouchableOpacity>
   );
@@ -30,9 +31,9 @@ const CreateProductComponent = memo(props => {
           <TextInput placeholderTextColor={colors.textPlaceholder}
             placeholder={"Please Enter Product Title"}
             style={globalStyles.inputStylesText11}
-            value={props.firstName}
+            value={props.productTitle}
             onChangeText={value => {
-              props.setFirstNameData(value);
+              props.setProductData(value);
             }}
           >
           </TextInput>
@@ -42,9 +43,9 @@ const CreateProductComponent = memo(props => {
           <TextInput placeholderTextColor={colors.textPlaceholder}
             placeholder={"Please Enter Price"}
             style={globalStyles.inputStylesText11}
-            value={props.firstName}
+            value={props.price}
             onChangeText={value => {
-              props.setFirstNameData(value);
+              props.setPriceData(value);
             }}
           >
           </TextInput>
@@ -54,9 +55,9 @@ const CreateProductComponent = memo(props => {
           <TextInput placeholderTextColor={colors.textPlaceholder}
             placeholder={"Please Enter Description"}
             style={globalStyles.inputStylesText11}
-            value={props.firstName}
+            value={props.description}
             onChangeText={value => {
-              props.setFirstNameData(value);
+              props.setDescriptionData(value);
             }}
           >
           </TextInput>
@@ -66,9 +67,9 @@ const CreateProductComponent = memo(props => {
           <TextInput placeholderTextColor={colors.textPlaceholder}
             placeholder={"Please provide Image Link"}
             style={globalStyles.inputStylesText11}
-            value={props.firstName}
+            value={props.imageLink}
             onChangeText={value => {
-              props.setFirstNameData(value);
+              props.setImageData(value);
             }}
           >
           </TextInput>
@@ -85,7 +86,9 @@ const CreateProductComponent = memo(props => {
 
         </View>
 
-
+        <TouchableOpacity onPress={() => props.addButtonPress()} style={styles.buttonBackStyle1}>
+          <Text style={styles.buttonTextStyle1}>Add Product</Text>
+        </TouchableOpacity>
 
       </ScrollView>
     </View>

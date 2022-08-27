@@ -113,4 +113,32 @@ export default StyleSheet.create({
     borderRadius:20
 
   },
+  buttonBackStyle1: {
+    marginTop: 30,
+    justifyContent: 'center',
+    borderRadius: 8,
+    height: 50,
+    width: 130,
+    marginRight: 15,
+    marginLeft: 15,
+    backgroundColor: colors.button_color,
+    fontSize: sizes.Regular,
+    marginBottom: 30,
+    alignSelf: 'center'
+  },
+  buttonTextStyle1: {
+    color: colors.white,
+    fontSize: sizes.Regular,
+    marginRight: 20,
+    marginLeft: 20,
+    alignSelf: 'center'
+  },
+  Text: {
+    color: colors.hint_color,
+    fontSize: sizes.regular,
+    fontFamily: fonts.Regular,
+    backgroundColor: colors.white,
+    borderColor: colors.gray,
+    marginTop:10,
+  },
 });
