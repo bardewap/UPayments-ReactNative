@@ -1,8 +1,6 @@
 import {
   API_MASTER_LIST,
-  API_SEARCH_COMPLAINT,
-  API_COMPLAINT_STATUS,
-  API_CREATE_COMPLAINT
+  API_PRODUCT_DETAIL
 } from '../types';
 export const apiProductList = () => ({
   types: API_MASTER_LIST,
@@ -15,47 +13,16 @@ export const apiProductList = () => ({
   },
 });
 
-export const apiSearchComplaint = params => ({
-  types: API_SEARCH_COMPLAINT,
+
+export const apiProductDetail = (productId) => ({
+  types: API_PRODUCT_DETAIL,
   payload: {
-    client: 'default',
-    request: {
-      url: '/api/complaint/search',
-      method: 'post',
-      data: {
-        ...params,
+      client: 'default',
+      request: {
+          url: `/api/products/${productId}`,
+          method: 'get',
       },
-    },
   },
 });
 
-
-export const apiCreateComplaint = params => ({
-  types: API_CREATE_COMPLAINT,
-  payload: {
-    client: 'default',
-    request: {
-      url: '/api/complaint/add-complaint',
-      method: 'post',
-      data: {
-        ...params,
-      },
-    },
-  },
-});
-
-
-export const apiComplaintStatus = params => ({
-  types: API_COMPLAINT_STATUS,
-  payload: {
-    client: 'default',
-    request: {
-      url: '/api/complaint/complaint-status',
-      method: 'post',
-      data: {
-        ...params,
-      },
-    },
-  },
-});
 

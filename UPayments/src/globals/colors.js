@@ -1,7 +1,7 @@
 export default {
   black: '#1E1E1E',
   white: '#ffffff',
-  main: '#ffffff',
+  main: '#003366',
   mainBlur: '#cb899c',
   border1: '#D6D6D6',
   border2: '#E3E3E3',
@@ -14,7 +14,7 @@ export default {
   blueColor: '#1D0F5B',
   imageBack: '#F3F3F3',
   login_button_color: '#FDAF65',
-  main_color: '#ffffff',
+  main_color: '#003366',
   light_main_color: '#36756A',
   dot_color: '#B2C2C1',
   searchTextBack: '#F0F0F0',

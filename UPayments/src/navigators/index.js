@@ -18,6 +18,7 @@ import FeedbackStatusContainer from '../screens/FeedbackStatus/FeedbackStatusCon
 import FeedbackContainer from '../screens/Feedback/FeedbackContainer';
 import NewComplaintTwoContainer from '../screens/NewComplaintTwo/NewComplaintTwoContainer';
 import NewComplaintThreeContainer from '../screens/NewComplaintThree/NewComplaintThreeContainer';
+import ProductDetailsContainer from '../screens/ProductDetails/ProductDetailsContainer';
 
 const SplashStack = createStackNavigator();
 const SplashScreen = () => (
@@ -35,7 +36,7 @@ const DemoScreen = () => (
     screenOptions={{headerShown: false}}
     initialRouteName="HomeContainer">
     <DemoStack.Screen name="HomeContainer" component={HomeContainer} />
-    <DemoStack.Screen name="LoginContainer" component={LoginContainer} />
+    <DemoStack.Screen name="ProductDetailsContainer" component={ProductDetailsContainer} />
     <DemoStack.Screen
       name="IntroductionContainer"
       component={IntroductionContainer}

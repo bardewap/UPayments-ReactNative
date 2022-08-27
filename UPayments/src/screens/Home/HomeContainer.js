@@ -27,18 +27,11 @@ const HomeContainer = memo(props => {
     };
   });
 
-  const introductionPress = () => {
-    navigation.navigate('IntroductionContainer');
+  const itemDetailsButtonPress = (item) => {
+    navigation.navigate('ProductDetailsContainer',{data:{item:item}});
   };
 
-  const searchPress = () => {
-    callComplaintSearchAPI(search)
-  };
-
-  const complaintPress = () => {
-    navigation.navigate('NewComplaintContainer');
-  };
-
+ 
   const apiProductListCall = async () => {
     setLoading(true);
     await apiProductList()
@@ -69,11 +62,9 @@ const HomeContainer = memo(props => {
     <HomeComponent
       props={props}
       isLoading={isLoading}
-      introductionPress={introductionPress}
-      complaintPress={complaintPress}
-      searchPress={searchPress}
       productList={productList}
       pullToRefresh={pullToRefresh}
+      itemDetailsButtonPress={itemDetailsButtonPress}
 
     />
   );
