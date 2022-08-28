@@ -21,7 +21,7 @@ defaultClient.interceptors.request.use(config => {
   console.log('=========  Token ' + JSON.stringify(token));
 
   console.log('=========  Data ' + JSON.stringify(user_data));
- var token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByYWRlZXAuYmFyZGV3YUBnbWFpbC5jb20iLCJnaXRodWIiOiJodHRwczovL2dpdGh1Yi5jb20vYmFyZGV3YXAiLCJpYXQiOjE2NjE1OTI4NDQsImV4cCI6MTY2MjAyNDg0NH0.h9a8TuuWWYawk1z4-34EQhrzuuXM8V3QpR5SlUKb8pA"
+ var token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByYWRlZXAuYmFyZGV3YUBnbWFpbC5jb20iLCJnaXRodWIiOiJodHRwczovL2dpdGh1Yi5jb20vYmFyZGV3YXAiLCJpYXQiOjE2NjE2OTExNjksImV4cCI6MTY2MjEyMzE2OX0.5fhiporHkKlZFK-gLbDfd7QXELVPKDr61orz_OgKmeU"
   if (token) {
     Object.assign(config, {
       headers: {
